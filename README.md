@@ -46,3 +46,16 @@ The repository is published from this folder. In GitHub, in the repository's Set
 
 JUCE is best added as a git submodule rather than committed:
 `git submodule add https://github.com/juce-framework/JUCE.git JUCE`.
+
+## Licence
+
+Copyright (C) 2026 Ege Canpolat (Lab Rat Audio).
+
+The code in this repository is free software under the GNU Affero General Public License v3
+(see [LICENSE](LICENSE)): you can use, study, change and share it, as long as anything you share
+built from it stays under the same licence, with its source. That's also what JUCE's open-source
+licence asks of plugins built with it.
+
+Not covered by that licence: JUCE (its own licence, see `JUCE/LICENSE.md`) and the bundled fonts
+(Luckiest Guy under Apache 2.0 and Fredoka under the SIL Open Font License; their licence files are
+in `Elsewhere/Assets/`).

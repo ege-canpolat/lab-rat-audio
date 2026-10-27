@@ -65,3 +65,7 @@ System Settings > Privacy & Security > Open Anyway. The download page explains t
 - `Source/PluginEditor.*`: window layout and the parameter wiring.
 
 Fonts: Luckiest Guy (Apache 2.0) and Fredoka (OFL), both from Google Fonts.
+
+## Licence
+
+GNU AGPL v3, like the rest of the repository: see `../LICENSE` and `../README.md`.
