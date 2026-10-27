@@ -1,0 +1,138 @@
+/* Lab Rat Audio: the shared, deliberately neutral frame around every plugin.
+   The hub uses all of it; plugin pages use the top bar and footer and bring their own look. */
+
+:root {
+  --pg-bg: #f5f3ee;
+  --pg-surface: #ffffff;
+  --pg-ink: #17161a;
+  --pg-muted: #6c6a72;
+  --pg-line: #dedad2;
+  --pg-accent: #17161a;
+  --pg-radius: 14px;
+  --pg-font: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --pg-display: "Space Grotesk", "Inter", system-ui, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --pg-bg: #121114;
+    --pg-surface: #1b1a1f;
+    --pg-ink: #f1efe9;
+    --pg-muted: #9b98a3;
+    --pg-line: #2d2b33;
+    --pg-accent: #f1efe9;
+  }
+}
+:root[data-theme="dark"] {
+  --pg-bg: #121114;
+  --pg-surface: #1b1a1f;
+  --pg-ink: #f1efe9;
+  --pg-muted: #9b98a3;
+  --pg-line: #2d2b33;
+  --pg-accent: #f1efe9;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; }
+img { max-width: 100%; height: auto; display: block; }
+
+/* ---- Top bar: on every page, so you can always get back to the hub ---- */
+.pg-bar {
+  font: 500 14px/1 var(--pg-font);
+  background: #17161a;
+  color: #f1efe9;
+}
+.pg-bar__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.pg-bar a { color: inherit; text-decoration: none; }
+.pg-bar a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.pg-wordmark { font-family: var(--pg-display); font-weight: 700; letter-spacing: 0.04em; }
+.pg-bar__muted { color: #9b98a3; }
+
+/* ---- Footer ---- */
+.pg-footer {
+  font: 400 13px/1.6 var(--pg-font);
+  background: #17161a;
+  color: #9b98a3;
+}
+.pg-footer__inner { max-width: 1100px; margin: 0 auto; padding: 28px 16px 36px; }
+.pg-footer a { color: #f1efe9; }
+
+/* ---- Hub ---- */
+.pg-hub {
+  background: var(--pg-bg);
+  color: var(--pg-ink);
+  font: 400 16px/1.6 var(--pg-font);
+  min-height: 100vh;
+}
+.pg-main { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+
+.pg-intro { padding: 72px 0 48px; max-width: 720px; }
+.pg-intro h1 {
+  font: 700 clamp(40px, 7vw, 72px)/1 var(--pg-display);
+  letter-spacing: -0.02em;
+  margin: 0 0 20px;
+  text-wrap: balance;
+}
+.pg-intro p { margin: 0; font-size: 18px; color: var(--pg-muted); max-width: 60ch; }
+
+.pg-section-title {
+  font: 600 13px/1 var(--pg-font);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--pg-muted);
+  margin: 0 0 16px;
+}
+
+.pg-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+  gap: 20px;
+  padding-bottom: 80px;
+}
+
+.pg-card {
+  background: var(--pg-surface);
+  border: 1px solid var(--pg-line);
+  border-radius: var(--pg-radius);
+  overflow: hidden;
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+a.pg-card:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12); }
+.pg-card__image { aspect-ratio: 940 / 660; object-fit: cover; width: 100%; background: #222; }
+.pg-card__body { padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.pg-card__name { font: 700 22px/1.2 var(--pg-display); margin: 0; }
+.pg-card__line { margin: 0; color: var(--pg-muted); font-size: 15px; }
+.pg-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 8px; }
+.pg-tag {
+  font: 500 12px/1 var(--pg-font);
+  border: 1px solid var(--pg-line);
+  border-radius: 999px;
+  padding: 6px 10px;
+  color: var(--pg-muted);
+}
+.pg-tag--on { background: var(--pg-accent); color: var(--pg-bg); border-color: var(--pg-accent); }
+
+.pg-card--soon {
+  border-style: dashed;
+  background: transparent;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 280px;
+  padding: 24px;
+  color: var(--pg-muted);
+}
+.pg-card--soon .pg-card__name { color: var(--pg-ink); }

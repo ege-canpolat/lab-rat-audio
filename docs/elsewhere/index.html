@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Elsewhere · Lab Rat Audio</title>
+  <meta name="description" content="Elsewhere: hear your mix from somewhere else. A free mix-check plugin (VST3 / AU) for macOS.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Inter:wght@400;500&family=Luckiest+Guy&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/playground.css">
+  <link rel="stylesheet" href="elsewhere.css">
+</head>
+<body class="ew">
+  <header class="pg-bar">
+    <div class="pg-bar__inner">
+      <a href="../">&larr; <span class="pg-wordmark">LAB RAT AUDIO</span></a>
+      <span class="pg-bar__muted">Elsewhere v0.1.0</span>
+    </div>
+  </header>
+
+  <svg class="ew-slime" viewBox="0 0 1200 56" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 0H1200V18Q1170 26 1150 18V40Q1150 52 1140 52Q1130 52 1130 40V18Q1080 28 1040 18Q990 26 960 18V30Q960 40 951 40Q942 40 942 30V18Q880 28 820 18Q770 26 740 18V46Q740 56 729 56Q718 56 718 46V18Q650 28 590 18Q540 26 500 18V34Q500 44 491 44Q482 44 482 34V18Q420 28 360 18Q300 26 260 18V48Q260 56 250 56Q240 56 240 48V18Q180 28 120 18Q70 26 40 18V30Q40 38 32 38Q24 38 24 30V18Q12 22 0 18Z"
+          fill="#9be81e" stroke="#1a1033" stroke-width="4"/>
+  </svg>
+
+  <main>
+    <section class="ew-hero ew-wrap">
+      <h1 class="ew-logo">
+        <!-- Exported from the plugin's own drawing code (ElsewhereRender writes Renders/logo.png). -->
+        <img src="img/logo.png" width="1171" height="654" alt="Elsewhere: hear your mix from somewhere else">
+      </h1>
+
+      <p class="ew-hero__lede">Your mix sounds great in the studio. But how does it sound through your neighbour's wall?
+        From the club toilets? Blasting out of a parked car? Elsewhere teleports your track to six places people
+        actually hear music, so you can check your mix there.</p>
+
+      <div class="ew-download" id="download">
+        <a class="ew-btn ew-btn--go" href="download/Elsewhere-0.1.0-mac.pkg" download>
+          <span class="ew-btn__big">DOWNLOAD FOR MAC</span>
+          <span class="ew-btn__small">macOS 11+ · Apple silicon &amp; Intel · VST3 + AU · 11 MB</span>
+        </a>
+        <span class="ew-btn ew-btn--soon" aria-disabled="true">
+          <span class="ew-btn__big">WINDOWS</span>
+          <span class="ew-btn__small">Coming soon!</span>
+        </span>
+      </div>
+      <p class="ew-download__note">Free. First time on a Mac? There's one extra click, <a href="#install">see how to install</a>.</p>
+
+      <div class="ew-tv">
+        <img src="img/hero.jpg" width="1400" height="983" alt="The Elsewhere plugin: a cartoon TV showing smokers chatting outside a club, with knobs and a big OPEN DOOR button">
+      </div>
+    </section>
+
+    <section class="ew-section ew-wrap">
+      <h2 class="ew-display">WHERE ARE YOU?</h2>
+      <p class="ew-section__sub">Six places, each with a big button to smash, and a cartoon that dances along to your track.</p>
+
+      <div class="ew-places">
+        <article class="ew-place">
+          <img src="img/screen_ui_1_sorry.jpg" width="840" height="468" alt="Next Door: a living room, the neighbour's music thumping through the wall" loading="lazy">
+          <div class="ew-place__body">
+            <h3 class="ew-place__name">Next Door</h3>
+            <p>Your neighbour is blasting your track. Only the bass makes it through the wall. Knock, and they shout back and turn it down… for a bit.</p>
+            <span class="ew-place__button">KNOCK!</span>
+          </div>
+        </article>
+        <article class="ew-place">
+          <img src="img/screen_ui_2_people.jpg" width="840" height="468" alt="Club Toilets: urinals, a mirror and a door to the club" loading="lazy">
+          <div class="ew-place__body">
+            <h3 class="ew-place__name">Club Toilets</h3>
+            <p>Muffled club through a tiled room. People wander in and out, and every time the door swings open the music floods in.</p>
+            <span class="ew-place__button">OPEN DOOR</span>
+          </div>
+        </article>
+        <article class="ew-place">
+          <img src="img/screen_ui_3_people.jpg" width="840" height="468" alt="Smoking Area: smokers chatting outside the club door at night" loading="lazy">
+          <div class="ew-place__body">
+            <h3 class="ew-place__name">Smoking Area</h3>
+            <p>Outside, with the smokers. Chatter, laughs, the city round the corner, and the club leaking out when the door opens. Someone may come out looking green.</p>
+            <span class="ew-place__button">OPEN DOOR</span>
+          </div>
+        </article>
+        <article class="ew-place">
+          <img src="img/screen_ui_4_traffic.jpg" width="840" height="468" alt="In The Car: a parked red car on a city street with traffic passing" loading="lazy">
+          <div class="ew-place__body">
+            <h3 class="ew-place__name">In The Car</h3>
+            <p>Parked downtown, stereo up: boomy cabin, bright dash tweeters. Step outside and hear what the street hears, with traffic honking past.</p>
+            <span class="ew-place__button">STEP OUTSIDE</span>
+          </div>
+        </article>
+        <article class="ew-place">
+          <img src="img/screen_ui_5.jpg" width="840" height="468" alt="Phone Speaker: a phone on a kitchen table with a message notification" loading="lazy">
+          <div class="ew-place__body">
+            <h3 class="ew-place__name">Phone Speaker</h3>
+            <p>Your mate plays it off their phone on the kitchen table. Tiny speaker, no bass, and messages keep buzzing in. Mum asks if you ate.</p>
+            <span class="ew-place__button">IN POCKET</span>
+          </div>
+        </article>
+        <article class="ew-place">
+          <img src="img/screen_ui_6_action.jpg" width="840" height="468" alt="Festival: tents on a hill, a tiny stage in the distance at sunset" loading="lazy">
+          <div class="ew-place__body">
+            <h3 class="ew-place__name">Festival</h3>
+            <p>Back at the campsite, half a kilometre from the main stage. The wind bends the sound and the valley echoes it back.</p>
+            <span class="ew-place__button">GUST!</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="ew-section ew-wrap">
+      <h2 class="ew-display">THE KNOBS</h2>
+      <p class="ew-section__sub">Put Elsewhere last on your master track. The places are loudness-matched, so flipping between them won't jump in level.</p>
+      <div class="ew-knobs">
+        <div class="ew-knob"><h3 class="ew-display">MIX</h3><p>How far you teleport. 100% is fully there; lower blends your dry mix back in.</p></div>
+        <div class="ew-knob"><h3 class="ew-display">VIBES</h3><p>How much life is around you: people, traffic, wind. Turn it to 0 for a clean, quiet mix check.</p></div>
+        <div class="ew-knob"><h3 class="ew-display">VOLUME</h3><p>Output level, for when you want it louder or quieter overall.</p></div>
+        <div class="ew-knob"><h3 class="ew-display">BACK TO STUDIO</h3><p>An instant A/B: one click and you're hearing your untouched mix again.</p></div>
+      </div>
+    </section>
+
+    <section class="ew-section ew-wrap" id="install">
+      <h2 class="ew-display">HOW TO INSTALL</h2>
+      <p class="ew-section__sub">Four steps. The second one is the only odd bit, and you only do it once.</p>
+      <ol class="ew-steps">
+        <li>
+          <h3>Download and double-click</h3>
+          <p>Open <span class="ew-path">Elsewhere-0.1.0-mac.pkg</span> from your Downloads folder. macOS will say it can't check it for
+             malicious software and won't open it. That's expected, click <b>Done</b>.</p>
+        </li>
+        <li class="ew-steps__key">
+          <h3>Tell your Mac it's OK</h3>
+          <p>Open <b>System Settings</b> &rarr; <b>Privacy &amp; Security</b>, scroll right down, and next to
+             <i>"Elsewhere-0.1.0-mac.pkg was blocked"</i> click <b>Open Anyway</b>. Enter your Mac password.</p>
+          <p class="ew-mini">On macOS 14 or older you can instead Control-click the file, choose Open, then Open again.</p>
+        </li>
+        <li>
+          <h3>Click through the installer</h3>
+          <p>Continue, Install, done. It puts the VST3 and Audio Unit in your Mac's plug-ins folders for you.</p>
+        </li>
+        <li>
+          <h3>Open your DAW</h3>
+          <p>Restart it, or rescan plug-ins (Ableton: Settings &rarr; Plug-Ins &rarr; Rescan). Look for
+             <b>Lab Rat Audio &rarr; Elsewhere</b> and drop it last on your master track.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="ew-section ew-wrap">
+      <h2 class="ew-display">QUESTIONS</h2>
+      <div class="ew-faq">
+        <details>
+          <summary>Why does my Mac warn me about it?</summary>
+          <p>Apple only skips the warning for apps signed with a paid Apple developer certificate. Elsewhere is a hobby
+             project and isn't signed (yet), so macOS asks you to confirm once. The plugin itself is the same either way.</p>
+        </details>
+        <details>
+          <summary>Which DAWs does it work in?</summary>
+          <p>Anything that loads VST3 or Audio Units on a Mac: Ableton Live, Logic Pro, FL Studio, Bitwig, Reaper, Cubase,
+             Studio One, GarageBand and more. Pro Tools (AAX) isn't supported.</p>
+        </details>
+        <details>
+          <summary>Is the chatter real speech?</summary>
+          <p>No, it's synthesised gibberish (read the speech bubbles for what they're on about). Everything you hear around
+             the music is generated live, so there are no samples and it never repeats exactly.</p>
+        </details>
+        <details>
+          <summary>Will it slow my session down?</summary>
+          <p>No: it uses a few percent of one CPU core and adds no latency.</p>
+        </details>
+        <details>
+          <summary>How do I uninstall it?</summary>
+          <p>Delete <span class="ew-path">Elsewhere.vst3</span> from <span class="ew-path">/Library/Audio/Plug-Ins/VST3</span> and
+             <span class="ew-path">Elsewhere.component</span> from <span class="ew-path">/Library/Audio/Plug-Ins/Components</span>.
+             (In Finder, press Cmd+Shift+G and paste the folder path.)</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pg-footer">
+    <div class="pg-footer__inner">
+      Elsewhere v0.1.0 · by <a href="../">Lab Rat Audio</a>. Fonts: Luckiest Guy (Apache 2.0) and Fredoka (SIL OFL).
+      VST is a trademark of Steinberg Media Technologies GmbH.
+    </div>
+  </footer>
+</body>
+</html>

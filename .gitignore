@@ -1,0 +1,11 @@
+# Build output
+build/
+build-*/
+*/build/
+*/build-*/
+
+# Local test renders and hand-made zips (the website's download lives in docs/)
+*/Renders/
+*/Share/
+
+.DS_Store
